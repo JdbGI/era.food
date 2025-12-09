@@ -1,0 +1,521 @@
+@font-face {
+  font-family: Satoshi;
+  src: url('../fonts/Satoshi-Regular.woff') format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url('../fonts/Satoshi-Black.woff') format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url('../fonts/Satoshi-Bold.woff') format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url('../fonts/Satoshi-Light.woff') format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url('../fonts/Satoshi-Medium.woff') format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Tanker;
+  src: url('../fonts/Tanker-Regular.otf') format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --dark: #3a1b0a;
+  --light: #ffecd4;
+  --dust: #8c3c2f;
+  --mute: #5b5748;
+}
+
+.w-layout-vflex {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+
+body {
+  background-color: var(--dark);
+  color: #333;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h1 {
+  color: var(--dark);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Tanker, Impact, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 44px;
+}
+
+.main-hold {
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.logo-hold {
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 4.375vw;
+  padding-bottom: 4.375vw;
+  display: flex;
+}
+
+.era-food-logo {
+  max-width: 6.875vw;
+}
+
+.heading {
+  color: var(--light);
+  text-align: center;
+  font-size: 10vw;
+  font-weight: 400;
+  line-height: .9;
+}
+
+.main-title {
+  grid-column-gap: 1.2vw;
+  grid-row-gap: 1.2vw;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 56vw;
+  height: 100%;
+  display: flex;
+}
+
+.coming-soon {
+  grid-column-gap: 1.8vw;
+  grid-row-gap: 1.8vw;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 70vw;
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 4.375vw;
+  padding-bottom: 4.375vw;
+  display: flex;
+}
+
+.bottom-float {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  height: 1.25vw;
+  display: none;
+  position: fixed;
+  inset: auto 0% 0%;
+}
+
+.colour-pal._1 {
+  background-color: #3a1b0a;
+  width: 100%;
+  height: 100%;
+}
+
+.colour-pal._2 {
+  background-color: #764431;
+}
+
+.colour-pal._3 {
+  background-color: #ffecd4;
+}
+
+.colour-pal._4 {
+  background-color: #8c3c2f;
+}
+
+.colour-pal._5 {
+  background-color: #5b5748;
+}
+
+.coming-soon-title {
+  color: var(--light);
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1.2vw;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.social-link {
+  color: var(--dark);
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.social-link-up {
+  grid-column-gap: 1vw;
+  grid-row-gap: 1vw;
+  background-color: var(--dark);
+  color: var(--light);
+  border: .12vw solid #ffecd433;
+  border-radius: 200vw;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw 1.8vw;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1.2vw;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: transform .15s ease-in-out;
+  display: flex;
+  transform: scale(.95);
+}
+
+.social-link-up:hover {
+  background-color: var(--dust);
+  transform: none;
+}
+
+.icon-embed-social {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1.4vw;
+  height: 1.4vw;
+  display: flex;
+}
+
+.flex-block {
+  grid-column-gap: .2vw;
+  grid-row-gap: .2vw;
+  flex-flow: wrap;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  width: 100%;
+  display: grid;
+}
+
+.icon-embed-xxsmall {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+}
+
+.wobbly {
+  cursor: none;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 8vw;
+  min-height: 8vw;
+  margin-top: auto;
+  margin-bottom: 0;
+  display: none;
+}
+
+.utility-page-wrap {
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  display: flex;
+}
+
+.utility-page-content {
+  text-align: center;
+  flex-direction: column;
+  width: auto;
+  display: flex;
+}
+
+.utility-page-form {
+  flex-direction: column;
+  align-items: stretch;
+  display: flex;
+}
+
+.submit-button {
+  background-color: var(--dark);
+}
+
+.field-label {
+  text-align: left;
+}
+
+.heading-2 {
+  max-width: 30vw;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Tanker, Impact, sans-serif;
+  font-size: 5vw;
+  line-height: 1;
+}
+
+.div-block {
+  background-color: var(--light);
+  width: 90vw;
+  height: .1vw;
+}
+
+.div-block-2 {
+  background-color: #ffecd4;
+  width: 11vw;
+  height: .12vw;
+}
+
+.link-title {
+  color: var(--light);
+  letter-spacing: .15vw;
+  text-transform: uppercase;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: .9vw;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tag-w-break {
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+  flex-flow: row;
+  grid-template-rows: auto;
+  grid-template-columns: 35% 30% 35%;
+  grid-auto-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  display: flex;
+}
+
+.location-tag {
+  grid-column-gap: .6vw;
+  grid-row-gap: .6vw;
+  border: .12vw none var(--light);
+  background-color: var(--dust);
+  color: var(--light);
+  border-radius: 200vw;
+  justify-content: flex-start;
+  align-items: center;
+  padding: .6vw 1vw;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1vw;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: transform .15s ease-in-out;
+  display: flex;
+  transform: scale(.95);
+}
+
+.location-tag:hover {
+  background-color: var(--dust);
+  transform: none;
+}
+
+@media screen and (max-width: 479px) {
+  .main-hold {
+    height: 100svh;
+  }
+
+  .logo-hold {
+    padding-top: 14vw;
+    padding-bottom: 8vw;
+  }
+
+  .era-food-logo {
+    max-width: 20vw;
+  }
+
+  .heading {
+    font-size: 17vw;
+  }
+
+  .main-title {
+    grid-column-gap: 4vw;
+    grid-row-gap: 4vw;
+    max-width: 90vw;
+  }
+
+  .coming-soon {
+    grid-column-gap: 4vw;
+    grid-row-gap: 4vw;
+    max-width: 90vw;
+    margin-bottom: 14vw;
+    padding-top: 0;
+  }
+
+  .bottom-float {
+    height: 4vw;
+  }
+
+  .coming-soon-title {
+    font-size: 4vw;
+    font-style: normal;
+  }
+
+  .social-link-up {
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vw;
+    letter-spacing: .125vw;
+    border-width: .35vw;
+    justify-content: center;
+    align-items: center;
+    padding: 2.4vw 4vw;
+    font-size: 3.4vw;
+    transform: none;
+  }
+
+  .icon-embed-social {
+    width: 3vw;
+    height: auto;
+  }
+
+  .icon-embed-social._2 {
+    width: 4vw;
+  }
+
+  .flex-block {
+    grid-column-gap: 2.5vw;
+    grid-row-gap: 2.5vw;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    justify-content: center;
+    place-items: center stretch;
+    display: grid;
+  }
+
+  .div-block-2 {
+    width: 100%;
+    max-width: none;
+    height: .3vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+
+  .link-title {
+    color: var(--light);
+    letter-spacing: .4vw;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 3vw;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .tag-w-break {
+    grid-column-gap: 4vw;
+    grid-row-gap: 4vw;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    max-width: 73vw;
+    display: grid;
+  }
+
+  .location-tag {
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vw;
+    letter-spacing: .125vw;
+    border-style: none;
+    border-width: .14vw;
+    padding: 2.4vw 4vw;
+    font-size: 3vw;
+    transform: none;
+  }
+}
+
+#w-node-_3a8ce7ef-f812-be39-d086-b1055e57ed6c-7fe09ece {
+  justify-self: center;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tanker';
+  src: url('../fonts/Tanker-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
