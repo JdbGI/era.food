@@ -27,6 +27,13 @@ body {
   background-image: none;
 }
 
+.find-us-image.visit.night-storefront {
+  object-position: 50% 52%;
+  background: #160c07;
+  border: 1px solid rgb(255 236 212 / 22%);
+  box-shadow: 0 2rem 5rem rgb(12 5 2 / 32%);
+}
+
 .menu-search {
   flex-direction: column;
   align-items: center;
@@ -211,6 +218,42 @@ html.menu-open body {
 }
 
 @media (max-width: 767px) {
+  .section.visit {
+    height: auto;
+    min-height: 100svh;
+    padding-top: 7.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .visit-contain {
+    flex-direction: column;
+    gap: 3rem;
+    width: min(100% - 2.5rem, 32rem);
+    max-width: none;
+  }
+
+  .visit-left-flex,
+  .visit-flex {
+    width: 100%;
+  }
+
+  .visit-flex {
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .find-us-image.visit.night-storefront {
+    width: min(100%, 27rem);
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-position: 50% 54%;
+    border-radius: 1.5rem;
+  }
+
+  .button-3.btn-76.second.smaller.visit {
+    width: min(100%, 27rem);
+  }
+
   .launch-note {
     margin-right: 1.25rem;
     margin-left: 1.25rem;
