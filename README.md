@@ -28,4 +28,4 @@ The check also catches missing local links, invalid structured data, duplicate I
 
 Make ordinary visual overrides in `css/site.css`; avoid editing the generated Webflow styles unless a new export requires it. When the menu changes, update both the visible prices in `menu.html` and its Menu JSON-LD. Keep `robots.txt`, `sitemap.xml`, canonical URLs and social preview details aligned with any page changes.
 
-The public menu should always point to `menuqr/` for current availability and allergen information.
+Visible ordering calls-to-action point directly to SumUp's `order-type` page. The protected `menuqr/` and table QR routes remain separate and must not be changed as part of ordinary site updates.
