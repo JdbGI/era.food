@@ -145,4 +145,122 @@
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) updateOrderState();
   });
+
+  const reviewsCarousel = document.querySelector("[data-reviews-carousel]");
+
+  if (reviewsCarousel) {
+    const track = reviewsCarousel.querySelector("[data-reviews-track]");
+    const slides = [...reviewsCarousel.querySelectorAll(".review-card")];
+    const previousButton = reviewsCarousel.querySelector("[data-review-prev]");
+    const nextButton = reviewsCarousel.querySelector("[data-review-next]");
+    const dotsContainer = reviewsCarousel.querySelector("[data-review-dots]");
+    const toggleButton = reviewsCarousel.querySelector("[data-review-toggle]");
+    const status = reviewsCarousel.querySelector("[data-review-status]");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let currentSlide = 0;
+    let rotationTimer;
+    let isPaused = false;
+    let isUserPaused = false;
+
+    const dots = slides.map((slide, index) => {
+      const dot = document.createElement("button");
+      dot.className = "review-dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Show review ${index + 1} of ${slides.length}`);
+      dot.addEventListener("click", () => {
+        showSlide(index, true);
+      });
+      dotsContainer?.append(dot);
+      return dot;
+    });
+
+    const stopRotation = () => {
+      window.clearInterval(rotationTimer);
+      rotationTimer = undefined;
+    };
+
+    const startRotation = () => {
+      stopRotation();
+      if (reduceMotion.matches || isPaused || isUserPaused || slides.length < 2) return;
+      rotationTimer = window.setInterval(() => {
+        showSlide(currentSlide + 1, false);
+      }, 7000);
+    };
+
+    function showSlide(index, announce = false) {
+      currentSlide = (index + slides.length) % slides.length;
+      if (track) track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      slides.forEach((slide, slideIndex) => {
+        const isCurrent = slideIndex === currentSlide;
+        slide.setAttribute("aria-hidden", String(!isCurrent));
+        slide.toggleAttribute("inert", !isCurrent);
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        const isCurrent = dotIndex === currentSlide;
+        dot.setAttribute("aria-current", String(isCurrent));
+      });
+
+      if (announce && status) {
+        const reviewer = slides[currentSlide].querySelector(".review-meta strong")?.textContent || "customer";
+        status.textContent = `Review ${currentSlide + 1} of ${slides.length}, from ${reviewer}.`;
+      }
+    }
+
+    const pauseRotation = () => {
+      isPaused = true;
+      stopRotation();
+    };
+
+    const resumeRotation = () => {
+      isPaused = false;
+      startRotation();
+    };
+
+    previousButton?.addEventListener("click", () => {
+      showSlide(currentSlide - 1, true);
+      startRotation();
+    });
+
+    nextButton?.addEventListener("click", () => {
+      showSlide(currentSlide + 1, true);
+      startRotation();
+    });
+
+    toggleButton?.addEventListener("click", () => {
+      isUserPaused = !isUserPaused;
+      toggleButton.textContent = isUserPaused ? "play rotation" : "pause rotation";
+      toggleButton.setAttribute(
+        "aria-label",
+        isUserPaused ? "Resume automatic review rotation" : "Pause automatic review rotation",
+      );
+      if (isUserPaused) stopRotation();
+      else startRotation();
+    });
+
+    reviewsCarousel.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showSlide(currentSlide - 1, true);
+        startRotation();
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showSlide(currentSlide + 1, true);
+        startRotation();
+      }
+    });
+
+    reviewsCarousel.addEventListener("mouseenter", pauseRotation);
+    reviewsCarousel.addEventListener("mouseleave", resumeRotation);
+    reviewsCarousel.addEventListener("focusin", pauseRotation);
+    reviewsCarousel.addEventListener("focusout", (event) => {
+      if (!reviewsCarousel.contains(event.relatedTarget)) resumeRotation();
+    });
+    reduceMotion.addEventListener?.("change", startRotation);
+
+    reviewsCarousel.classList.add("reviews-enhanced");
+    showSlide(0, false);
+    startRotation();
+  }
 })();
