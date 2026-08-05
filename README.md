@@ -11,6 +11,8 @@ This is the static website for era. in Gibraltar. The current design came from t
 - `loyalty.html` — unpublished future page (`noindex`)
 - `css/site.css` — hand-written fixes and responsive styling layered over the Webflow export
 - `js/site.js` — accessibility and safe external-link behaviour
+- `control/` — public legal, service-status and disconnection pages for the
+  owner-only Control accounting connection (live QuickBooks access remains disabled)
 
 ## Do not change the QR routes
 

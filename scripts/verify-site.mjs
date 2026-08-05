@@ -14,8 +14,23 @@ const protectedRoutes = {
   "t7/index.html": "d84ce171999bee3b305d18987b22c6af94e53219555ac6b941e1affd2787d2d0",
 };
 
-const pages = ["index.html", "menu.html", "visit.html", "about.html", "loyalty.html", "404.html", "401.html"];
-const publicPages = ["index.html", "menu.html", "visit.html", "about.html"];
+const controlPages = [
+  "control/index.html",
+  "control/privacy-policy.html",
+  "control/end-user-license-agreement.html",
+  "control/disconnected.html",
+];
+const pages = [
+  "index.html",
+  "menu.html",
+  "visit.html",
+  "about.html",
+  "loyalty.html",
+  "404.html",
+  "401.html",
+  ...controlPages,
+];
+const publicPages = ["index.html", "menu.html", "visit.html", "about.html", ...controlPages];
 const failures = [];
 
 for (const [file, expected] of Object.entries(protectedRoutes)) {
@@ -73,9 +88,23 @@ for (const page of publicPages) {
   if (headings.length !== 1) failures.push(`${page}: expected one h1, found ${headings.length}`);
 }
 
+for (const page of controlPages) {
+  const content = await readFile(resolve(root, page), "utf8");
+  if (!/Barton Solutions Limited/.test(content)) failures.push(`${page}: legal operator missing`);
+  if (!/Intuit and QuickBooks are registered trademarks of Intuit Inc\. Used with permission\./.test(content)) failures.push(`${page}: required Intuit trademark notice missing`);
+  if (/LEGAL OPERATOR|REGISTERED OR PRINCIPAL|legal draft|must not be published/i.test(content)) failures.push(`${page}: unresolved legal placeholder or draft warning`);
+  if (/quickbooks\.era\.food/i.test(content)) failures.push(`${page}: Intuit brand used in proposed host name`);
+  if (/action=["']\/api\/quickbooks/i.test(content)) failures.push(`${page}: callback action incorrectly points at era.food`);
+}
+
+const privacyNotice = await readFile(resolve(root, "control/privacy-policy.html"), "utf8");
+if (!/individual OpenAI account/.test(privacyNotice)) failures.push("control privacy: Personal-account boundary missing");
+if (!/gra\.gi\/data-protection\/complaints/.test(privacyNotice)) failures.push("control privacy: GRA complaint route missing");
+if (!/no later than 30 days afterward/.test(privacyNotice)) failures.push("control privacy: Codex retention limit missing");
+
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`Verified ${Object.keys(protectedRoutes).length} protected QR routes and ${pages.length} site pages.`);
+  console.log(`Verified ${Object.keys(protectedRoutes).length} protected QR routes and ${pages.length} site pages, including ${controlPages.length} Control pages.`);
 }
