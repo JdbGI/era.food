@@ -26,7 +26,7 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/eragib.webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/site.css?v=20260713-reviews" rel="stylesheet" type="text/css">
+  <link href="css/site.css?v=20260824-corporate" rel="stylesheet" type="text/css">
   <link href="fonts/Tanker-Regular.otf" rel="preload" as="font" type="font/otf" crossorigin>
   <link href="fonts/Satoshi-Variable.ttf" rel="preload" as="font" type="font/ttf" crossorigin>
   <link href="images/wide-plate.webp" rel="preload" as="image" type="image/webp" fetchpriority="high">
@@ -55,9 +55,19 @@
     },
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "08:30",
-      "closes": "21:30"
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:30",
+      "closes": "20:00"
+    }, {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:30",
+      "closes": "20:00"
+    }, {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "10:30",
+      "closes": "18:00"
     }],
     "sameAs": [
       "https://www.facebook.com/eragibraltar",
@@ -87,6 +97,9 @@
       </a>
       <a href="visit.html" class="menu-item-mobil w-inline-block">
         <div>visit</div>
+      </a>
+      <a href="corporate.html" class="menu-item-mobil w-inline-block">
+        <div>corporate</div>
       </a>
       <a href="https://app.ordering.sumup.com/era/icc/order-type" class="menu-item-mobil order w-inline-block">
         <div>order now</div>
@@ -146,6 +159,7 @@
         <a href="menu.html" class="nav-link w-nav-link">Menu</a>
         <a href="about.html" class="nav-link w-nav-link">about</a>
         <a href="visit.html" class="nav-link w-nav-link">Visit</a>
+        <a href="corporate.html" class="nav-link w-nav-link">corporate</a>
         <div class="nav-link-underline w-embed">
           <style>
 .nav-link {
@@ -605,6 +619,21 @@
       </div>
     </div>
   </section>
+  <section class="corp-teaser corp-strip" aria-labelledby="corp-teaser-title">
+    <div class="corp-shell corp-teaser-shell">
+      <div>
+        <p class="corp-kicker">for businesses</p>
+        <h2 id="corp-teaser-title" class="corp-title">lunch, delivered to your office.</h2>
+        <p class="corp-copy corp-teaser-intro">Corporate lunch delivery for teams and offices across Gibraltar. Order 10 or more bowls and delivery is free — with a guaranteed slot and a menu that changes every day.</p>
+        <a href="corporate.html" class="corp-btn">corporate lunch delivery</a>
+      </div>
+      <ul class="corp-teaser-points" role="list">
+        <li class="corp-teaser-point"><strong>free delivery</strong><span>on orders of 10+ bowls</span></li>
+        <li class="corp-teaser-point"><strong>guaranteed slot</strong><span>lunch lands on time, every time</span></li>
+        <li class="corp-teaser-point"><strong>daily variety</strong><span>a menu that changes every day</span></li>
+      </ul>
+    </div>
+  </section>
   <section class="the-app-section hidden">
     <div class="w-layout-vflex app-flex-contain">
       <div class="w-layout-vflex the-app-flex">
@@ -751,13 +780,18 @@
     <div class="w-layout-vflex dates-list">
       <div class="div-block-2"></div>
       <div class="opening-hour-title">
-        <div class="opening-hour-info-text">weekends</div>
-        <div class="opening-hour-info-text">8:30–21:30</div>
+        <div class="opening-hour-info-text">weekdays</div>
+        <div class="opening-hour-info-text">9:30–20:00</div>
       </div>
       <div class="div-block-2 _2md"></div>
       <div class="opening-hour-title">
-        <div class="opening-hour-info-text">weekdays</div>
-        <div class="opening-hour-info-text">8:30–21:30</div>
+        <div class="opening-hour-info-text">saturday</div>
+        <div class="opening-hour-info-text">10:30–20:00</div>
+      </div>
+      <div class="div-block-2 _2md"></div>
+      <div class="opening-hour-title">
+        <div class="opening-hour-info-text">sunday</div>
+        <div class="opening-hour-info-text">10:30–18:00</div>
       </div>
     </div>
   </section>
@@ -772,6 +806,7 @@
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f044d-f0f29927" href="menu.html" class="nav-link">menu</a>
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f044f-f0f29927" href="about.html" class="nav-link">about</a>
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f0451-f0f29927" href="visit.html" class="nav-link">visit</a>
+          <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f0452-f0f29927" href="corporate.html" class="nav-link">corporate</a>
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f0453-f0f29927" href="loyalty.html" class="nav-link hidden">app</a>
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f0455-f0f29927" href="https://app.ordering.sumup.com/era/icc/order-type" class="nav-link hidden">order</a>
         </div>

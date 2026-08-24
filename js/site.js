@@ -98,27 +98,46 @@
 
   const gibraltarClock = new Intl.DateTimeFormat("en-GB", {
     timeZone: "Europe/Gibraltar",
+    weekday: "short",
     hour: "2-digit",
     minute: "2-digit",
     hourCycle: "h23",
   });
 
+  const weekdayHours = { opens: 9 * 60 + 30, closes: 20 * 60 };
+  const openingHours = {
+    Mon: weekdayHours,
+    Tue: weekdayHours,
+    Wed: weekdayHours,
+    Thu: weekdayHours,
+    Fri: weekdayHours,
+    Sat: { opens: 10 * 60 + 30, closes: 20 * 60 },
+    Sun: { opens: 10 * 60 + 30, closes: 18 * 60 },
+  };
+
+  const formatMinutes = (total) => {
+    const hour = String(Math.floor(total / 60)).padStart(2, "0");
+    const minute = String(total % 60).padStart(2, "0");
+    return `${hour}:${minute}`;
+  };
+
   const getMenuState = (date = new Date()) => {
     const parts = Object.fromEntries(
       gibraltarClock
         .formatToParts(date)
-        .filter(({ type }) => type === "hour" || type === "minute")
-        .map(({ type, value }) => [type, Number(value)]),
+        .filter(({ type }) => type === "weekday" || type === "hour" || type === "minute")
+        .map(({ type, value }) => [type, value]),
     );
-    const minutes = parts.hour * 60 + parts.minute;
+    const minutes = Number(parts.hour) * 60 + Number(parts.minute);
+    const hours = openingHours[parts.weekday] || weekdayHours;
 
-    if (minutes < 8 * 60 + 30) {
-      return { key: "opening-soon", message: "Online ordering opens at 08:30" };
+    if (minutes < hours.opens) {
+      return { key: "opening-soon", message: `Online ordering opens at ${formatMinutes(hours.opens)}` };
     }
     if (minutes < 12 * 60) {
       return { key: "breakfast", message: "Our breakfast menu is open now" };
     }
-    if (minutes < 21 * 60 + 30) {
+    if (minutes < hours.closes) {
       return { key: "all-day", message: "Our all-day menu is open now" };
     }
     return { key: "closed", message: "Online ordering is closed for today" };

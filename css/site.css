@@ -851,3 +851,460 @@ html.menu-open body {
     display: none;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Corporate lunch delivery — homepage teaser + corporate.html        */
+/* ------------------------------------------------------------------ */
+
+.corp-strip {
+  padding: clamp(4.5rem, 8vw, 8rem) max(1.25rem, 5vw);
+}
+
+.corp-shell {
+  width: min(100%, 92rem);
+  margin: 0 auto;
+}
+
+.corp-kicker {
+  margin: 0 0 clamp(1rem, 2vw, 1.75rem);
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.9rem);
+  line-height: 1.2;
+  text-transform: lowercase;
+}
+
+.corp-title {
+  margin: 0;
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(3.25rem, 7vw, 7.5rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.85;
+  text-transform: lowercase;
+}
+
+.corp-copy {
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(0.95rem, 1.35vw, 1.25rem);
+  line-height: 1.55;
+}
+
+.corp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: clamp(0.85rem, 1.25vw, 1.25rem) clamp(1.4rem, 2vw, 2rem);
+  color: var(--era-cream);
+  background: var(--era-bark);
+  border: 2px solid var(--era-bark);
+  border-radius: 999px;
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.corp-btn:hover,
+.corp-btn:focus-visible {
+  color: var(--era-bark);
+  background: var(--era-cream);
+  border-color: var(--era-bark);
+  box-shadow: 0 0.9rem 2.5rem rgb(58 27 10 / 28%);
+  transform: scale(1.03);
+}
+
+.corp-btn--cream {
+  color: var(--era-bark);
+  background: var(--era-cream);
+  border-color: var(--era-cream);
+}
+
+.corp-btn--cream:hover,
+.corp-btn--cream:focus-visible {
+  color: var(--era-cream);
+  background: transparent;
+  border-color: var(--era-cream);
+  box-shadow: 0 0.9rem 2.5rem rgb(12 5 2 / 35%);
+}
+
+.corp-link {
+  align-self: center;
+  color: inherit;
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-decoration-thickness: 0.12em;
+  text-transform: uppercase;
+  text-underline-offset: 0.35em;
+}
+
+/* Homepage teaser ---------------------------------------------------- */
+
+.corp-teaser {
+  color: var(--era-bark);
+  background: var(--era-cream);
+}
+
+.corp-teaser-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(19rem, 0.9fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  align-items: center;
+}
+
+.corp-teaser-intro {
+  max-width: 34rem;
+  margin: clamp(1.25rem, 2.5vw, 2rem) 0 clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.corp-teaser-points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.corp-teaser-point {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: clamp(1rem, 1.8vw, 1.6rem) 0;
+  border-top: 1px solid rgb(58 27 10 / 35%);
+}
+
+.corp-teaser-point:last-child {
+  border-bottom: 1px solid rgb(58 27 10 / 35%);
+}
+
+.corp-teaser-point strong {
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.corp-teaser-point span {
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+}
+
+/* Corporate page ------------------------------------------------------ */
+
+.corp-hero {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 92svh;
+  padding: clamp(8.5rem, 14vw, 12rem) max(1.25rem, 5vw) clamp(4rem, 7vw, 6rem);
+  color: var(--era-cream);
+  background-image: linear-gradient(#3a1b0acc, #3a1b0acc), url("../images/wide-plate.webp");
+  background-position: 50%;
+  background-size: cover;
+}
+
+.corp-hero-title {
+  margin: 0;
+  max-width: 60rem;
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.85;
+  text-transform: lowercase;
+}
+
+.corp-hero-lead {
+  max-width: 46rem;
+  margin: clamp(1.5rem, 2.5vw, 2.25rem) 0 0;
+}
+
+.corp-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: clamp(1.75rem, 3vw, 2.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.corp-hero-badges li {
+  padding: 0.6rem 1.1rem;
+  border: 2px solid rgb(255 236 212 / 65%);
+  border-radius: 999px;
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(0.72rem, 0.95vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.corp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.75rem;
+  margin-top: clamp(2rem, 3.5vw, 3rem);
+}
+
+.corp-benefits {
+  color: var(--era-bark);
+  background: var(--era-cream);
+}
+
+.corp-benefits .corp-title {
+  max-width: 55rem;
+}
+
+.corp-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.6vw, 1.5rem);
+  margin-top: clamp(2.5rem, 4.5vw, 4rem);
+}
+
+.corp-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: clamp(1.5rem, 2.6vw, 2.75rem);
+  border: 2px solid var(--era-bark);
+  border-radius: clamp(1.25rem, 2vw, 2rem);
+}
+
+.corp-card-num {
+  margin: 0 0 clamp(2rem, 4vw, 3.5rem);
+  color: var(--era-dust);
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  line-height: 1;
+}
+
+.corp-card h3 {
+  margin: 0 0 0.9rem;
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  font-weight: 400;
+  line-height: 0.95;
+  text-transform: lowercase;
+}
+
+.corp-card p {
+  margin: 0;
+}
+
+.corp-about {
+  color: var(--era-cream);
+  background: var(--era-dust);
+}
+
+.corp-about-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  align-items: center;
+}
+
+.corp-about-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border: 2px solid rgb(255 236 212 / 45%);
+  border-radius: clamp(1.25rem, 2vw, 2rem);
+  object-fit: cover;
+}
+
+.corp-about .corp-copy + .corp-copy {
+  margin-top: 1.1rem;
+}
+
+.corp-about .corp-title {
+  margin-bottom: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-size: clamp(2.75rem, 5.5vw, 5.75rem);
+}
+
+.corp-steps {
+  color: var(--era-cream);
+  background: var(--era-bark);
+}
+
+.corp-steps-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  margin: clamp(2.5rem, 4.5vw, 4rem) 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: corp-step;
+}
+
+.corp-steps-list li {
+  counter-increment: corp-step;
+  padding-top: clamp(1.25rem, 2vw, 1.75rem);
+  border-top: 1px solid rgb(255 236 212 / 45%);
+}
+
+.corp-steps-list li::before {
+  content: "0" counter(corp-step);
+  display: block;
+  margin-bottom: clamp(1.25rem, 2.5vw, 2.25rem);
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1;
+  opacity: 0.75;
+}
+
+.corp-steps-list h3 {
+  margin: 0 0 0.8rem;
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  font-weight: 400;
+  line-height: 0.95;
+  text-transform: lowercase;
+}
+
+.corp-steps-list p {
+  margin: 0;
+}
+
+.corp-steps-list a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.corp-faq {
+  color: var(--era-bark);
+  background: var(--era-cream);
+}
+
+.corp-faq-list {
+  max-width: 62rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.corp-faq details {
+  border-top: 1px solid rgb(58 27 10 / 35%);
+}
+
+.corp-faq details:last-child {
+  border-bottom: 1px solid rgb(58 27 10 / 35%);
+}
+
+.corp-faq summary {
+  display: flex;
+  gap: 1.25rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: clamp(1.1rem, 1.8vw, 1.6rem) 0;
+  cursor: pointer;
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.3;
+  list-style: none;
+}
+
+.corp-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.corp-faq summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.corp-faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.corp-faq details p {
+  max-width: 52rem;
+  margin: 0;
+  padding: 0 0 clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.corp-cta {
+  color: var(--era-cream);
+  background: var(--era-dust);
+  text-align: center;
+}
+
+.corp-cta .corp-title {
+  margin: 0 auto;
+  font-size: clamp(3.5rem, 9vw, 9rem);
+}
+
+.corp-cta .corp-copy {
+  max-width: 36rem;
+  margin: clamp(1.25rem, 2.5vw, 2rem) auto clamp(2rem, 3.5vw, 3rem);
+}
+
+.corp-cta-note {
+  margin: 1.5rem 0 0;
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  opacity: 0.85;
+}
+
+.corp-cta-note a {
+  color: inherit;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .corp-teaser-shell,
+  .corp-about-shell {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .corp-cards,
+  .corp-steps-list {
+    grid-template-columns: 1fr;
+  }
+
+  .corp-hero {
+    min-height: 88svh;
+    padding-top: 8rem;
+  }
+
+  .corp-hero-badges li {
+    white-space: normal;
+  }
+
+  .corp-card-num {
+    margin-bottom: 1.5rem;
+  }
+
+  .corp-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .corp-teaser .corp-btn {
+    margin-top: 2rem;
+  }
+
+  .corp-hero-actions,
+  .corp-cta {
+    text-align: center;
+  }
+
+  .corp-link {
+    width: 100%;
+    text-align: center;
+  }
+}
