@@ -1107,20 +1107,8 @@ html.menu-open body {
   background: var(--era-dust);
 }
 
-.corp-about-shell {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(2.5rem, 6vw, 7rem);
-  align-items: center;
-}
-
-.corp-about-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  border: 2px solid rgb(255 236 212 / 45%);
-  border-radius: clamp(1.25rem, 2vw, 2rem);
-  object-fit: cover;
+.corp-about .corp-copy {
+  max-width: 48rem;
 }
 
 .corp-about .corp-copy + .corp-copy {
@@ -1139,7 +1127,7 @@ html.menu-open body {
 
 .corp-steps-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: clamp(1.5rem, 3vw, 3rem);
   margin: clamp(2.5rem, 4.5vw, 4rem) 0 0;
   padding: 0;
@@ -1265,8 +1253,7 @@ html.menu-open body {
 }
 
 @media (max-width: 767px) {
-  .corp-teaser-shell,
-  .corp-about-shell {
+  .corp-teaser-shell {
     grid-template-columns: 1fr;
     gap: 2.25rem;
   }
