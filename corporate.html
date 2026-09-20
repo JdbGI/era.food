@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Corporate Catering &amp; Office Lunch Delivery in Gibraltar | era.</title>
-  <meta content="Mediterranean lunch plates delivered to offices and teams across Gibraltar. Free delivery on 10+ plates, guaranteed delivery slots and a menu that changes every day." name="description">
+  <meta content="Office catering and corporate lunch delivery across Gibraltar. Mediterranean plates with high-protein, vegetarian and vegan options. Free delivery on 10+ plates." name="description">
   <meta content="index, follow, max-image-preview:large" name="robots">
   <link href="https://era.food/corporate.html" rel="canonical">
   <meta content="Corporate Catering &amp; Office Lunch Delivery in Gibraltar | era." property="og:title">
-  <meta content="Lunch plates for teams and offices across Gibraltar. Free delivery on 10+ plates, guaranteed slots and daily variety." property="og:description">
+  <meta content="Office catering and lunch delivery for teams across Gibraltar. Free delivery on 10+ plates, guaranteed slots, daily variety and healthy options as standard." property="og:description">
   <meta content="https://era.food/images/e-opengraph.png" property="og:image">
   <meta content="1200" property="og:image:width">
   <meta content="630" property="og:image:height">
@@ -16,7 +16,7 @@
   <meta content="era." property="og:site_name">
   <meta content="en_GB" property="og:locale">
   <meta content="Corporate Catering &amp; Office Lunch Delivery in Gibraltar" name="twitter:title">
-  <meta content="Free delivery on 10+ plates, guaranteed slots and daily variety for Gibraltar workplaces." name="twitter:description">
+  <meta content="Office catering for Gibraltar workplaces: free delivery on 10+ plates, guaranteed slots, daily variety and healthy options as standard." name="twitter:description">
   <meta content="https://era.food/images/e-opengraph.png" name="twitter:image">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
@@ -25,7 +25,7 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/eragib.webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/site.css?v=20260824-corporate" rel="stylesheet" type="text/css">
+  <link href="css/site.css?v=20260919-lunch-club" rel="stylesheet" type="text/css">
   <link href="fonts/Tanker-Regular.otf" rel="preload" as="font" type="font/otf" crossorigin>
   <link href="fonts/Satoshi-Variable.ttf" rel="preload" as="font" type="font/ttf" crossorigin>
   <link href="images/wide-plate.webp" rel="preload" as="image" type="image/webp" fetchpriority="high">
@@ -38,20 +38,22 @@
     "@type": "Service",
     "@id": "https://era.food/corporate.html#service",
     "name": "Corporate catering and office lunch delivery in Gibraltar",
-    "serviceType": "Corporate catering",
+    "serviceType": ["Corporate catering", "Office catering", "Office lunch delivery", "Team lunch delivery"],
     "url": "https://era.food/corporate.html",
-    "description": "Lunch delivery for businesses in Gibraltar. Mediterranean plates cooked with olive oil, delivered to offices and workplaces with a guaranteed delivery slot. Free delivery on orders of 10 or more plates, with menu variety every day. Companies are set up on an online ordering platform where staff can order individually within a spending allocation, or a manager can order for the whole office, with a detailed statement every week.",
+    "image": "https://era.food/images/e-opengraph.png",
+    "description": "Office catering and lunch delivery for businesses in Gibraltar. Mediterranean plates cooked with olive oil, with high-protein, vegetarian and vegan options every day, delivered to offices and workplaces with a guaranteed delivery slot. Free delivery on orders of 10 or more plates, with menu variety every day. Companies are set up on an online ordering platform where staff can order individually within a spending allocation, or a manager can order for the whole office, with a detailed statement every week.",
     "provider": {
       "@type": "Restaurant",
       "@id": "https://era.food/#restaurant",
       "name": "era.",
       "url": "https://era.food/",
       "email": "info@era.food",
-      "servesCuisine": ["Mediterranean"],
+      "servesCuisine": ["Mediterranean", "Healthy"],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Unit G24, ICC",
         "addressLocality": "Gibraltar",
+        "postalCode": "GX11 1AA",
         "addressCountry": "GI"
       }
     },
@@ -62,6 +64,21 @@
     "audience": {
       "@type": "BusinessAudience",
       "name": "Businesses, offices and teams in Gibraltar"
+    },
+    "isRelatedTo": {
+      "@type": "Service",
+      "@id": "https://era.food/healthy-office-lunch.html#service",
+      "name": "Healthy office lunch delivery in Gibraltar",
+      "url": "https://era.food/healthy-office-lunch.html"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Office lunch options",
+      "itemListElement": [
+        {"@type": "Offer", "name": "Team lunches and daily staff lunches", "description": "Individual plates for teams of 10 or more, as a one-off or a standing daily or weekly order."},
+        {"@type": "Offer", "name": "Meeting, boardroom and training-day catering", "description": "Plates delivered to a guaranteed slot for meetings, training days and client visits."},
+        {"@type": "Offer", "name": "Staff lunch allowance", "description": "Each staff member orders their own plate within a spending allocation you set, with a detailed weekly statement."}
+      ]
     },
     "offers": {
       "@type": "Offer",
@@ -110,7 +127,7 @@
         "name": "Can each worker choose their own food?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Every person builds their own plate - one protein, two sides and a house sauce - so nobody is stuck with someone else\u2019s choice. Vegetarian and vegan options are always available."
+          "text": "Yes. Every person builds their own plate - one protein, two sides and a house sauce - so nobody is stuck with someone else's choice. Vegetarian and vegan options are always available."
         }
       },
       {
@@ -147,10 +164,42 @@
       },
       {
         "@type": "Question",
+        "name": "Are there healthy, high-protein options?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every plate is built around a protein - chicken breast, chicken thigh, heart of rump steak, secreto iberico, halloumi, falafel or crispy tofu - with fresh sides and a house sauce, cooked with olive oil. You can add a second protein to any plate. Our healthy office lunch guide covers the high-protein, vegetarian and vegan combinations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you do office catering for meetings, training days and client lunches?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tell us the headcount and the time, and we deliver individual plates for meeting catering, training days, boardroom lunches or client visits. Everyone still gets their own choice of protein, sides and sauce."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which parts of Gibraltar do you deliver to?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Offices and workplaces across Gibraltar, from Main Street and Irish Town to Ocean Village, Europort, Midtown and the World Trade Center. If you are not sure, email info@era.food with your address."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "How do we set up a daily or weekly office lunch?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Email info@era.food with your company name, headcount, office address and preferred delivery time. We will set it up as a one-off or a recurring team lunch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I just want lunch for myself. Can I still order?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ERA Lunch Club is our weekly lunch service for individuals: register for a personal code, choose your weekday lunches for the week ahead and pay online, with delivery to your workplace for £2.95 per lunch day or free collection from ICC. No subscription, no automatic charges. See era.food/lunch-club.html."
         }
       }
     ]
@@ -185,6 +234,9 @@
       </a>
       <a href="corporate.html" aria-current="page" class="menu-item-mobil w-inline-block w--current">
         <div>corporate</div>
+      </a>
+      <a href="lunch-club.html" class="menu-item-mobil w-inline-block">
+        <div>lunch club</div>
       </a>
       <a href="https://app.ordering.sumup.com/era/icc/order-type" class="menu-item-mobil order w-inline-block">
         <div>order now</div>
@@ -245,6 +297,7 @@
         <a href="about.html" class="nav-link w-nav-link">about</a>
         <a href="visit.html" class="nav-link w-nav-link">Visit</a>
         <a href="corporate.html" aria-current="page" class="nav-link w-nav-link w--current">corporate</a>
+        <a href="lunch-club.html" class="nav-link w-nav-link">lunch club</a>
         <div class="nav-link-underline w-embed">
           <style>
 .nav-link {
@@ -286,11 +339,12 @@
     <div class="corp-shell">
       <p class="corp-kicker">corporate catering — gibraltar</p>
       <h1 class="corp-hero-title">office lunch,<br>delivered.</h1>
-      <p class="corp-copy corp-hero-lead">Lunch delivery for businesses in Gibraltar. Mediterranean plates — one protein, two sides and a house sauce, cooked with olive oil at ICC — delivered to your workplace with a slot you can rely on.</p>
+      <p class="corp-copy corp-hero-lead">Office catering and lunch delivery for businesses in Gibraltar. Mediterranean plates — one protein, two sides and a house sauce, cooked with olive oil at ICC — delivered to your workplace with a slot you can rely on. High-protein, vegetarian and vegan options every day.</p>
       <ul class="corp-hero-badges" role="list">
         <li>10+ plates = free delivery</li>
         <li>guaranteed delivery slot</li>
         <li>variety every day</li>
+        <li>high-protein, veggie &amp; vegan</li>
       </ul>
       <div class="corp-hero-actions">
         <a href="mailto:info@era.food?subject=Corporate%20lunch%20delivery%20enquiry&amp;body=Hi%20era.%20team%2C%0A%0ACompany%3A%20%0AHeadcount%3A%20%0AOffice%20address%3A%20%0ADelivery%20day%20and%20time%3A%20%0A%0AThanks%21" class="corp-btn corp-btn--cream">email your order</a>
@@ -300,7 +354,7 @@
   </section>
   <section class="corp-strip corp-benefits" aria-labelledby="corp-benefits-title">
     <div class="corp-shell">
-      <p class="corp-kicker">lunch for teams &amp; offices</p>
+      <p class="corp-kicker">office catering for teams &amp; workplaces</p>
       <h2 id="corp-benefits-title" class="corp-title">why gibraltar teams order era.</h2>
       <div class="corp-cards">
         <article class="corp-card">
@@ -325,8 +379,39 @@
     <div class="corp-shell">
       <p class="corp-kicker">workplace catering, the era. way</p>
       <h2 id="corp-about-title" class="corp-title">proper lunch for the whole team.</h2>
-      <p class="corp-copy">Whether it&#x27;s a team lunch for ten or daily staff meals for the whole office, we cater for workplaces across Gibraltar. Every plate is built the same way as in our restaurant: one protein, two sides and a house sauce, cooked with olive oil at Unit G24, ICC.</p>
-      <p class="corp-copy">Everyone picks their own plate, so one office order covers every diet — vegetarian and vegan options are always there. Meeting catering, boardroom lunches, training days or just a better everyday staff lunch: tell us the headcount and we&#x27;ll handle the rest.</p>
+      <p class="corp-copy">Office catering, without the compromise. Whether it&#x27;s a team lunch for ten or daily staff meals for the whole office, we cater for workplaces across Gibraltar. Every plate is built the same way as in our restaurant: one protein, two sides and a house sauce, cooked with olive oil at Unit G24, ICC.</p>
+      <p class="corp-copy">Everyone picks their own plate, so one office order covers every diet — high-protein, vegetarian and vegan options are always there, and allergens are labelled on every item. Meeting catering, boardroom lunches, training days, client visits or just a better everyday staff lunch: tell us the headcount and we&#x27;ll handle the rest.</p>
+      <p class="corp-copy">We deliver to offices across Gibraltar — Main Street, Irish Town, Ocean Village, Europort, Midtown, the World Trade Center and beyond.</p>
+    </div>
+  </section>
+  <section class="corp-strip corp-health" aria-labelledby="corp-health-title">
+    <div class="corp-shell">
+      <p class="corp-kicker">healthy by default</p>
+      <h2 id="corp-health-title" class="corp-title">good for the team, good for the afternoon.</h2>
+      <p class="corp-copy corp-section-intro">Healthy office lunches shouldn&#x27;t need a separate menu. Every era. plate is protein-first, cooked with olive oil and finished with fresh sides — so the healthy option is just the option.</p>
+      <div class="corp-cards corp-cards--four">
+        <article class="corp-card">
+          <p class="corp-card-num">01</p>
+          <h3>high protein</h3>
+          <p class="corp-copy">Chicken breast, chicken thigh, heart of rump steak, secreto ibérico, halloumi or crispy tofu on every plate — and you can add a second protein.</p>
+        </article>
+        <article class="corp-card">
+          <p class="corp-card-num">02</p>
+          <h3>vegetarian &amp; vegan</h3>
+          <p class="corp-copy">Halloumi (V), falafel (VE) and crispy tofu (VE), with vegan sides and sauces, all marked on the menu. Nobody gets the leftover option.</p>
+        </article>
+        <article class="corp-card">
+          <p class="corp-card-num">03</p>
+          <h3>allergens labelled</h3>
+          <p class="corp-copy">Every item on our live ordering menu carries its allergen details. Tell us about allergies or intolerances when you order.</p>
+        </article>
+        <article class="corp-card">
+          <p class="corp-card-num">04</p>
+          <h3>cooked with olive oil</h3>
+          <p class="corp-copy">Fresh, same-day cooking at ICC with olive oil, house sauces and a salad mix you&#x27;d actually choose.</p>
+        </article>
+      </div>
+      <p class="corp-more"><a href="healthy-office-lunch.html" class="corp-btn">healthy office lunch guide</a></p>
     </div>
   </section>
   <section class="corp-strip corp-steps" aria-labelledby="corp-steps-title">
@@ -351,6 +436,7 @@
           <p class="corp-copy">Plates are cooked fresh the same day at ICC Gibraltar and arrive in your guaranteed slot — free on orders of 10 plates or more.</p>
         </li>
       </ol>
+      <p class="corp-more"><a href="lunch-club.html" class="corp-link">ordering just for yourself? join era lunch club</a></p>
     </div>
   </section>
   <section class="corp-strip corp-faq" aria-labelledby="corp-faq-title">
@@ -391,8 +477,24 @@
           <p class="corp-copy">Yes. There are vegetarian and vegan options on the menu, and each person builds their own plate. Tell us about any allergies when you place the order.</p>
         </details>
         <details>
+          <summary>Are there healthy, high-protein options?</summary>
+          <p class="corp-copy">Every plate is built around a protein — chicken breast, chicken thigh, heart of rump steak, secreto ibérico, halloumi, falafel or crispy tofu — with fresh sides and a house sauce, cooked with olive oil. You can add a second protein to any plate. Our <a href="healthy-office-lunch.html">healthy office lunch guide</a> covers the high-protein, vegetarian and vegan combinations.</p>
+        </details>
+        <details>
+          <summary>Do you do office catering for meetings, training days and client lunches?</summary>
+          <p class="corp-copy">Yes. Tell us the headcount and the time, and we deliver individual plates for meeting catering, training days, boardroom lunches or client visits. Everyone still gets their own choice of protein, sides and sauce.</p>
+        </details>
+        <details>
+          <summary>Which parts of Gibraltar do you deliver to?</summary>
+          <p class="corp-copy">Offices and workplaces across Gibraltar, from Main Street and Irish Town to Ocean Village, Europort, Midtown and the World Trade Center. If you&#x27;re not sure, email <a href="mailto:info@era.food">info@era.food</a> with your address.</p>
+        </details>
+        <details>
           <summary>How do we set up a daily or weekly office lunch?</summary>
           <p class="corp-copy">Email <a href="mailto:info@era.food">info@era.food</a> with your company name, headcount, office address and preferred delivery time. We&#x27;ll set it up as a one-off or a recurring team lunch.</p>
+        </details>
+        <details>
+          <summary>I just want lunch for myself. Can I still order?</summary>
+          <p class="corp-copy">Yes. <a href="lunch-club.html">ERA Lunch Club</a> is our weekly lunch service for individuals: register for a personal code, choose your weekday lunches for the week ahead and pay online, with delivery to your workplace for £2.95 per lunch day or free collection from ICC. No subscription, no automatic charges.</p>
         </details>
       </div>
     </div>
@@ -400,7 +502,7 @@
   <section class="corp-strip corp-cta" aria-labelledby="corp-cta-title">
     <div class="corp-shell">
       <h2 id="corp-cta-title" class="corp-title">feed your team.</h2>
-      <p class="corp-copy">Corporate lunch delivery for Gibraltar workplaces. Free delivery on 10 or more plates, a guaranteed slot, and a menu that changes every day.</p>
+      <p class="corp-copy">Office catering and corporate lunch delivery for Gibraltar workplaces. Free delivery on 10 or more plates, a guaranteed slot, and a menu that changes every day.</p>
       <a href="mailto:info@era.food?subject=Corporate%20lunch%20delivery%20enquiry&amp;body=Hi%20era.%20team%2C%0A%0ACompany%3A%20%0AHeadcount%3A%20%0AOffice%20address%3A%20%0ADelivery%20day%20and%20time%3A%20%0A%0AThanks%21" class="corp-btn corp-btn--cream">email info@era.food</a>
       <p class="corp-cta-note">Prefer to talk it through? Drop by <a href="visit.html">Unit G24, ICC</a> — we&#x27;re in daily — 9:30–20:00 weekdays, from 10:30 on weekends.</p>
     </div>
@@ -417,6 +519,8 @@
           <a id="w-node-corp-footer-about" href="about.html" class="nav-link">about</a>
           <a id="w-node-corp-footer-visit" href="visit.html" class="nav-link">visit</a>
           <a id="w-node-corp-footer-corp" href="corporate.html" aria-current="page" class="nav-link w--current">corporate</a>
+          <a href="healthy-office-lunch.html" class="nav-link">healthy lunches</a>
+          <a href="lunch-club.html" class="nav-link">lunch club</a>
           <a id="w-node-corp-footer-app" href="loyalty.html" class="nav-link hidden">app</a>
           <a id="w-node-corp-footer-order" href="https://app.ordering.sumup.com/era/icc/order-type" class="nav-link hidden">order</a>
         </div>

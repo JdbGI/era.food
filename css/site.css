@@ -1295,3 +1295,219 @@ html.menu-open body {
     text-align: center;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Healthy office lunch page + shared additions (2026-09)              */
+/* ------------------------------------------------------------------ */
+
+.corp-hero-title--long {
+  max-width: 72rem;
+  font-size: clamp(3.5rem, 8vw, 8rem);
+}
+
+.corp-section-intro {
+  max-width: 48rem;
+  margin: clamp(1.25rem, 2.5vw, 2rem) 0 0;
+}
+
+.corp-section-intro + .corp-copy {
+  max-width: 48rem;
+  margin: 1.1rem 0 0;
+}
+
+.corp-more {
+  margin: clamp(2rem, 3.5vw, 3rem) 0 0;
+}
+
+.corp-more .corp-link {
+  display: inline-block;
+}
+
+.corp-teaser-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.75rem;
+  align-items: center;
+}
+
+.corp-teaser-point a,
+.corp-about .corp-copy a,
+.corp-faq details p a,
+.corp-plate .corp-copy a,
+.corp-goals .corp-copy a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+}
+
+.corp-cards--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.corp-cards--light .corp-card {
+  border-color: rgb(255 236 212 / 70%);
+}
+
+.corp-cards--light .corp-card-num {
+  color: var(--era-cream);
+  opacity: 0.8;
+}
+
+.corp-health,
+.corp-plate {
+  color: var(--era-bark);
+  background: var(--era-cream);
+}
+
+.corp-goals,
+.corp-pillars-section {
+  color: var(--era-cream);
+  background: var(--era-dust);
+}
+
+.corp-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.corp-figure {
+  margin: 0;
+}
+
+.corp-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(1.25rem, 2vw, 2rem);
+  box-shadow: 0 2rem 5rem rgb(58 27 10 / 22%);
+}
+
+.corp-figure figcaption {
+  margin-top: 0.9rem;
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(0.8rem, 0.95vw, 0.95rem);
+  opacity: 0.8;
+}
+
+.corp-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(2rem, 5vw, 5rem);
+  margin: clamp(2.5rem, 4.5vw, 4rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.corp-pillars li {
+  padding: clamp(1.25rem, 2vw, 1.75rem) 0;
+  border-top: 1px solid rgb(255 236 212 / 45%);
+}
+
+.corp-pillars strong {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  font-weight: 400;
+  line-height: 0.95;
+  text-transform: lowercase;
+}
+
+.corp-pillars span {
+  display: block;
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(0.95rem, 1.35vw, 1.25rem);
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .corp-cards--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .corp-cards--four,
+  .corp-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .corp-split {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .corp-hero-title--long {
+    font-size: clamp(3.25rem, 14vw, 4.5rem);
+  }
+
+  .corp-teaser-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* ERA Lunch Club page (2026-09)                                        */
+/* ------------------------------------------------------------------ */
+
+.corp-cards--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.corp-steps .corp-cards {
+  margin-top: clamp(2.5rem, 4.5vw, 4rem);
+}
+
+.corp-card .corp-more {
+  margin-top: auto;
+  padding-top: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+.corp-card .corp-more .corp-link {
+  display: inline-block;
+}
+
+.corp-card .corp-price {
+  display: block;
+  margin-top: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-family: Tanker, Impact, sans-serif;
+  font-size: clamp(2.75rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: lowercase;
+}
+
+.corp-card .corp-price span {
+  display: block;
+  margin-top: 0.6rem;
+  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .corp-cards--two {
+    grid-template-columns: 1fr;
+  }
+
+  /* Seven footer links no longer fit on one row at phone widths. */
+  .footer-menu-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem 1.5rem;
+    box-sizing: border-box;
+    padding: 0 1.25rem;
+  }
+
+  .footer-menu-wrap .nav-link {
+    text-align: center;
+  }
+}

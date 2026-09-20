@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /tmp/
 
 Sitemap: https://era.food/sitemap.xml

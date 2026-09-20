@@ -20,17 +20,24 @@ const controlPages = [
   "control/end-user-license-agreement.html",
   "control/disconnected.html",
 ];
-const pages = [
+const indexablePages = [
   "index.html",
   "menu.html",
   "visit.html",
   "about.html",
+  "corporate.html",
+  "healthy-office-lunch.html",
+  "lunch-club.html",
+];
+const pages = [
+  ...indexablePages,
   "loyalty.html",
   "404.html",
   "401.html",
   ...controlPages,
 ];
-const publicPages = ["index.html", "menu.html", "visit.html", "about.html", ...controlPages];
+const publicPages = [...indexablePages, ...controlPages];
+const siteOrigin = "https://era.food/";
 const failures = [];
 
 for (const [file, expected] of Object.entries(protectedRoutes)) {
@@ -102,9 +109,78 @@ if (!/individual OpenAI account/.test(privacyNotice)) failures.push("control pri
 if (!/gra\.gi\/data-protection\/complaints/.test(privacyNotice)) failures.push("control privacy: GRA complaint route missing");
 if (!/no later than 30 days afterward/.test(privacyNotice)) failures.push("control privacy: Codex retention limit missing");
 
+// SEO checks for the indexable marketing pages: metadata, canonicals, sitemap and FAQ schema.
+const sitemap = await readFile(resolve(root, "sitemap.xml"), "utf8");
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+const decodeText = (text) =>
+  text
+    .replace(/&#x27;|&#39;|\u2019/g, "'")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+const metaContent = (content, attribute, value) => {
+  const tag = [...content.matchAll(/<meta\b[^>]*>/gi)].map((match) => match[0]).find((candidate) =>
+    new RegExp(`\\b${attribute}="${value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`, "i").test(candidate),
+  );
+  return tag?.match(/\bcontent="([^"]*)"/i)?.[1];
+};
+
+for (const page of indexablePages) {
+  const content = await readFile(resolve(root, page), "utf8");
+  const canonicalUrl = `${siteOrigin}${page === "index.html" ? "" : page}`;
+  const title = decodeText(content.match(/<title>([^<]*)<\/title>/i)?.[1] ?? "");
+  if (!title) failures.push(`${page}: missing <title>`);
+  else if (title.length > 70) failures.push(`${page}: title is ${title.length} characters (keep it to 70)`);
+
+  const description = decodeText(metaContent(content, "name", "description") ?? "");
+  if (!description) failures.push(`${page}: missing meta description`);
+  else if (description.length < 50 || description.length > 175) failures.push(`${page}: meta description is ${description.length} characters (aim for 50-175)`);
+
+  const canonical = content.match(/<link\b[^>]*rel="canonical"[^>]*>/i)?.[0]?.match(/\bhref="([^"]+)"/i)?.[1];
+  if (canonical !== canonicalUrl) failures.push(`${page}: canonical is ${canonical}, expected ${canonicalUrl}`);
+
+  const robots = metaContent(content, "name", "robots") ?? "";
+  if (/noindex/i.test(robots)) failures.push(`${page}: indexable page carries noindex`);
+
+  for (const property of ["og:title", "og:description", "og:image", "og:url"]) {
+    if (!metaContent(content, "property", property)) failures.push(`${page}: missing ${property}`);
+  }
+  if (metaContent(content, "property", "og:url") !== canonicalUrl) failures.push(`${page}: og:url does not match the canonical`);
+  if (!sitemapUrls.includes(canonicalUrl)) failures.push(`${page}: ${canonicalUrl} missing from sitemap.xml`);
+
+  for (const match of content.matchAll(/<img\b[^>]*>/gi)) {
+    if (!/\balt=/i.test(match[0])) failures.push(`${page}: image without alt attribute ${match[0].slice(0, 80)}`);
+  }
+
+  const visibleText = decodeText(content.replace(/<script\b[\s\S]*?<\/script>/gi, " ").replace(/<style\b[\s\S]*?<\/style>/gi, " "));
+  for (const match of content.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
+    let data;
+    try {
+      data = JSON.parse(match[1]);
+    } catch {
+      continue;
+    }
+    const nodes = Array.isArray(data["@graph"]) ? data["@graph"] : [data];
+    for (const node of nodes) {
+      if (node["@type"] !== "FAQPage") continue;
+      for (const question of node.mainEntity ?? []) {
+        const name = decodeText(question.name ?? "");
+        if (!visibleText.includes(name)) failures.push(`${page}: FAQ schema question is not visible on the page: ${name}`);
+      }
+    }
+  }
+}
+
+for (const url of sitemapUrls) {
+  const page = url === siteOrigin ? "index.html" : url.replace(siteOrigin, "");
+  if (!indexablePages.includes(page)) failures.push(`sitemap.xml: ${url} is not an indexable page`);
+}
+
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`Verified ${Object.keys(protectedRoutes).length} protected QR routes and ${pages.length} site pages, including ${controlPages.length} Control pages.`);
+  console.log(`Verified ${Object.keys(protectedRoutes).length} protected QR routes and ${pages.length} site pages, including ${controlPages.length} Control pages and SEO metadata on ${indexablePages.length} indexable pages.`);
 }

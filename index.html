@@ -2,12 +2,12 @@
 <html lang="en" data-wf-page="692edad06833afaaf0f29927" data-wf-site="692edacd6833afaaf0f2986d">
 <head>
   <meta charset="utf-8">
-  <title>era. | Modern Mediterranean food in Gibraltar</title>
-  <meta content="Modern Mediterranean food, served fast at Unit G24, ICC Gibraltar. Choose a protein, two sides and a house sauce, all cooked with olive oil." name="description">
+  <title>era. | Healthy Mediterranean Food &amp; Office Catering in Gibraltar</title>
+  <meta content="Build your plate at ICC Gibraltar: a protein, two sides and a house sauce, cooked with olive oil. High-protein, vegan and veggie options, plus office lunch delivery." name="description">
   <meta content="index, follow, max-image-preview:large" name="robots">
   <link href="https://era.food/" rel="canonical">
-  <meta content="era. | Modern Mediterranean food in Gibraltar" property="og:title">
-  <meta content="Choose a protein, two sides and a house sauce. Modern Mediterranean food, cooked with olive oil and served fast at ICC Gibraltar." property="og:description">
+  <meta content="era. | Healthy Mediterranean Food &amp; Office Catering in Gibraltar" property="og:title">
+  <meta content="Choose a protein, two sides and a house sauce, cooked with olive oil at ICC Gibraltar. High-protein, vegan and vegetarian plates, plus office lunch delivery for teams." property="og:description">
   <meta content="https://era.food/images/e-opengraph.png" property="og:image">
   <meta content="1200" property="og:image:width">
   <meta content="630" property="og:image:height">
@@ -15,8 +15,8 @@
   <meta content="https://era.food/" property="og:url">
   <meta content="era." property="og:site_name">
   <meta content="en_GB" property="og:locale">
-  <meta content="era. | Modern Mediterranean food in Gibraltar" name="twitter:title">
-  <meta content="Choose a protein, two sides and a house sauce. Cooked with olive oil and served fast at ICC Gibraltar." name="twitter:description">
+  <meta content="era. | Healthy Mediterranean Food &amp; Office Catering in Gibraltar" name="twitter:title">
+  <meta content="Choose a protein, two sides and a house sauce, cooked with olive oil at ICC Gibraltar. High-protein, vegan and vegetarian plates, plus office lunch delivery." name="twitter:description">
   <meta content="https://era.food/images/e-opengraph.png" name="twitter:image">
   <meta content="era. food in Gibraltar" name="twitter:image:alt">
   <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/eragib.webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/site.css?v=20260824-corporate" rel="stylesheet" type="text/css">
+  <link href="css/site.css?v=20260919-lunch-club" rel="stylesheet" type="text/css">
   <link href="fonts/Tanker-Regular.otf" rel="preload" as="font" type="font/otf" crossorigin>
   <link href="fonts/Satoshi-Variable.ttf" rel="preload" as="font" type="font/ttf" crossorigin>
   <link href="images/wide-plate.webp" rel="preload" as="image" type="image/webp" fetchpriority="high">
@@ -36,22 +36,56 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://era.food/#website",
+    "url": "https://era.food/",
+    "name": "era.",
+    "alternateName": ["era.food", "era. Gibraltar"],
+    "inLanguage": "en-GB",
+    "publisher": {"@id": "https://era.food/#restaurant"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Restaurant",
     "@id": "https://era.food/#restaurant",
     "name": "era.",
+    "alternateName": "era. Gibraltar",
     "url": "https://era.food/",
-    "description": "Modern Mediterranean food, served fast at ICC Gibraltar.",
-    "image": "https://era.food/images/e-opengraph.png",
+    "description": "Modern Mediterranean plates, served fast at ICC Gibraltar: one protein, two sides and a house sauce, cooked with olive oil. High-protein, vegetarian and vegan options, plus office lunch delivery for Gibraltar teams.",
+    "image": [
+      "https://era.food/images/e-opengraph.png",
+      "https://era.food/images/healthy-plate-og.jpg"
+    ],
     "logo": "https://era.food/images/era-bark-logo.svg",
     "email": "info@era.food",
     "priceRange": "££",
-    "servesCuisine": ["Mediterranean"],
-    "hasMenu": "https://era.food/menu.html",
+    "currenciesAccepted": "GBP",
+    "servesCuisine": ["Mediterranean", "Healthy"],
+    "keywords": "healthy food Gibraltar, high-protein lunch, vegetarian, vegan, office lunch delivery, corporate catering Gibraltar",
+    "hasMenu": {
+      "@type": "Menu",
+      "@id": "https://era.food/menu.html#menu",
+      "name": "era. menu",
+      "url": "https://era.food/menu.html"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Unit G24, ICC",
       "addressLocality": "Gibraltar",
+      "postalCode": "GX11 1AA",
       "addressCountry": "GI"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.1438569,
+      "longitude": -5.353766
+    },
+    "hasMap": "https://maps.app.goo.gl/QpB22QmCk7WLLs1d7",
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Gibraltar"
     },
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
@@ -74,6 +108,41 @@
       "https://www.instagram.com/era.gib/",
       "https://x.com/era_gib",
       "https://www.linkedin.com/company/era-food"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "Corporate catering and office lunch delivery in Gibraltar",
+        "url": "https://era.food/corporate.html",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://era.food/corporate.html#service",
+          "name": "Corporate catering and office lunch delivery in Gibraltar",
+          "url": "https://era.food/corporate.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Healthy office lunches: high-protein, vegetarian and vegan plates",
+        "url": "https://era.food/healthy-office-lunch.html",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://era.food/healthy-office-lunch.html#service",
+          "name": "Healthy office lunch delivery in Gibraltar",
+          "url": "https://era.food/healthy-office-lunch.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "ERA Lunch Club: weekday lunches delivered or collected in Gibraltar",
+        "url": "https://era.food/lunch-club.html",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://era.food/lunch-club.html#service",
+          "name": "ERA Lunch Club: weekday lunch delivery and collection in Gibraltar",
+          "url": "https://era.food/lunch-club.html"
+        }
+      }
     ],
     "potentialAction": {
       "@type": "OrderAction",
@@ -100,6 +169,9 @@
       </a>
       <a href="corporate.html" class="menu-item-mobil w-inline-block">
         <div>corporate</div>
+      </a>
+      <a href="lunch-club.html" class="menu-item-mobil w-inline-block">
+        <div>lunch club</div>
       </a>
       <a href="https://app.ordering.sumup.com/era/icc/order-type" class="menu-item-mobil order w-inline-block">
         <div>order now</div>
@@ -160,6 +232,7 @@
         <a href="about.html" class="nav-link w-nav-link">about</a>
         <a href="visit.html" class="nav-link w-nav-link">Visit</a>
         <a href="corporate.html" class="nav-link w-nav-link">corporate</a>
+        <a href="lunch-club.html" class="nav-link w-nav-link">lunch club</a>
         <div class="nav-link-underline w-embed">
           <style>
 .nav-link {
@@ -322,14 +395,14 @@
       <a href="menu.html" class="menu-tag left w-inline-block">
         <div class="w-layout-vflex tag-text-hold">
           <div class="menu-tag-title left">from the kitchen</div>
-          <div class="menu-tag-descrip">Proteins, sides and house sauces. Simple, balanced and built your way.</div>
+          <div class="menu-tag-descrip">Good proteins, fresh sides and house sauces. Balanced, protein-packed and built your way, with vegetarian and vegan options every day.</div>
         </div>
         <div class="w-layout-vflex unique-menu-button">
           <div class="menu-tag-descrip link">View the menu</div>
           <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--heroicons" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 20 20">
               <path fill="currentColor" fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06" clip-rule="evenodd"></path>
             </svg></div>
-        </div><img src="images/one-plate-thumb.png" loading="lazy" sizes="(max-width: 1034px) 100vw, 1034px" srcset="images/one-plate-thumb-p-500.png 500w, images/one-plate-thumb-p-800.png 800w, images/one-plate-thumb.png 1034w" alt="" class="menu-img-sup">
+        </div><img src="images/one-plate-thumb.png" loading="lazy" sizes="(max-width: 1034px) 100vw, 1034px" srcset="images/one-plate-thumb-p-500.png 500w, images/one-plate-thumb-p-800.png 800w, images/one-plate-thumb.png 1034w" alt="An era. plate of grilled chicken with a spiced glaze, toasted sourdough and dressed salad leaves" class="menu-img-sup">
       </a>
       <a href="menu.html" class="menu-tag right w-inline-block">
         <div class="w-layout-vflex tag-text-hold second">
@@ -408,7 +481,7 @@
       </div>
       <div class="secondary-title">the menu</div><img src="images/menu-display.png" loading="lazy" sizes="(max-width: 573px) 100vw, 573px" srcset="images/menu-display-p-500.png 500w, images/menu-display.png 573w" alt="" class="image-16">
       <div class="w-layout-vflex flex-para-button">
-        <div class="normal-text">One protein, two sides and a house sauce. Straightforward choices, cooked with olive oil.</div>
+        <div class="normal-text">One protein, two sides and a house sauce. Straightforward, healthy choices, cooked with olive oil.</div>
         <a href="https://app.ordering.sumup.com/era/icc/order-type" class="more-link">order now</a>
       </div>
       <div class="nav-link-underline w-embed">
@@ -622,15 +695,20 @@
   <section class="corp-teaser corp-strip" aria-labelledby="corp-teaser-title">
     <div class="corp-shell corp-teaser-shell">
       <div>
-        <p class="corp-kicker">for businesses</p>
+        <p class="corp-kicker">office catering &amp; corporate lunch delivery</p>
         <h2 id="corp-teaser-title" class="corp-title">lunch, delivered to your office.</h2>
-        <p class="corp-copy corp-teaser-intro">Corporate lunch delivery for teams and offices across Gibraltar. Order 10 or more plates and delivery is free — with a guaranteed slot and a menu that changes every day.</p>
-        <a href="corporate.html" class="corp-btn">corporate lunch delivery</a>
+        <p class="corp-copy corp-teaser-intro">Corporate catering and office lunch delivery for teams across Gibraltar. Order 10 or more plates and delivery is free — with a guaranteed slot, a menu that changes every day, and high-protein, vegetarian and vegan plates as standard.</p>
+        <div class="corp-teaser-actions">
+          <a href="corporate.html" class="corp-btn">corporate catering &amp; office lunches</a>
+          <a href="healthy-office-lunch.html" class="corp-link">healthy office lunch guide</a>
+        </div>
       </div>
       <ul class="corp-teaser-points" role="list">
         <li class="corp-teaser-point"><strong>free delivery</strong><span>on orders of 10+ plates</span></li>
         <li class="corp-teaser-point"><strong>guaranteed slot</strong><span>lunch lands on time, every time</span></li>
         <li class="corp-teaser-point"><strong>daily variety</strong><span>a menu that changes every day</span></li>
+        <li class="corp-teaser-point"><strong>healthy by default</strong><span><a href="healthy-office-lunch.html">high-protein, veggie &amp; vegan plates</a></span></li>
+        <li class="corp-teaser-point"><strong>just for you?</strong><span><a href="lunch-club.html">join era lunch club</a> — weekday lunches, no subscription</span></li>
       </ul>
     </div>
   </section>
@@ -807,6 +885,8 @@
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f044f-f0f29927" href="about.html" class="nav-link">about</a>
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f0451-f0f29927" href="visit.html" class="nav-link">visit</a>
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f0452-f0f29927" href="corporate.html" class="nav-link">corporate</a>
+          <a href="healthy-office-lunch.html" class="nav-link">healthy lunches</a>
+          <a href="lunch-club.html" class="nav-link">lunch club</a>
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f0453-f0f29927" href="loyalty.html" class="nav-link hidden">app</a>
           <a id="w-node-c7369cc0-1cbd-b424-24fe-ba52b85f0455-f0f29927" href="https://app.ordering.sumup.com/era/icc/order-type" class="nav-link hidden">order</a>
         </div>

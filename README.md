@@ -8,6 +8,9 @@ This is the static website for era. in Gibraltar. The current design came from t
 - `menu.html` — opening menu and prices
 - `about.html` — brand story
 - `visit.html` — address, hours and directions
+- `corporate.html` — office catering and corporate lunch delivery (the landing page for "corporate catering", "office catering" and "office lunch delivery" searches)
+- `healthy-office-lunch.html` — the healthy office lunch guide (the landing page for "healthy", "high-protein", "vegan" and "vegetarian" lunch searches); linked from the homepage teaser, the corporate page, the menu page and every footer
+- `lunch-club.html` — ERA Lunch Club, the weekly lunch service for individuals (register, choose weekday lunches, pay per week; £2.95 delivery per lunch day or free collection). The indexable landing page for the `noindex` app at `lunch.era.food`; the register, log-in and office-member links point there. Linked from the main nav, the mobile menu, every footer, the homepage teaser, the corporate page and the menu page
 - `loyalty.html` — unpublished future page (`noindex`)
 - `css/site.css` — hand-written fixes and responsive styling layered over the Webflow export
 - `js/site.js` — accessibility and safe external-link behaviour
@@ -29,5 +32,13 @@ The check also catches missing local links, invalid structured data, duplicate I
 ## Updating the template
 
 Make ordinary visual overrides in `css/site.css`; avoid editing the generated Webflow styles unless a new export requires it. When the menu changes, update both the visible prices in `menu.html` and its Menu JSON-LD. Keep `robots.txt`, `sitemap.xml`, canonical URLs and social preview details aligned with any page changes.
+
+## SEO conventions
+
+- Every indexable page has one `<title>` of 70 characters or fewer and one meta description of 50–175 characters; `scripts/verify-site.mjs` enforces both, plus a matching canonical and `og:url`, and fails if an indexable page is missing from `sitemap.xml` or a `noindex` page appears in it.
+- `index.html` holds the `Restaurant` and `WebSite` structured data (address, `GX11 1AA` postcode, geo coordinates, hours, social profiles). Other pages reference `https://era.food/#restaurant` by `@id` rather than repeating it.
+- FAQ JSON-LD must mirror the visible `<details>` questions word for word; the verify script checks every question text appears on the page.
+- Diet claims live in three places that must stay in step when the menu changes: the visible menu, the Menu JSON-LD `suitableForDiet` marks on `menu.html`, and the vegetarian / vegan / high-protein copy on `healthy-office-lunch.html` and `corporate.html`.
+- Bump the `css/site.css?v=` query string on every page whenever `site.css` changes.
 
 Visible ordering calls-to-action point directly to SumUp's `order-type` page. The protected `menuqr/` and table QR routes remain separate and must not be changed as part of ordinary site updates.

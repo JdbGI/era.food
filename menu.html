@@ -2,12 +2,12 @@
 <html lang="en" data-wf-page="695ecd5bd422355dd3ce2f6c" data-wf-site="692edacd6833afaaf0f2986d">
 <head>
   <meta charset="utf-8">
-  <title>Menu | era. modern Mediterranean food in Gibraltar</title>
-  <meta content="Build your plate at era.: choose a protein, two sides and a house sauce. See the current Mediterranean menu, prices and order online in Gibraltar." name="description">
+  <title>era. Menu &amp; Prices | Mediterranean, Vegan &amp; Veggie Plates in Gibraltar</title>
+  <meta content="Build your plate at era. Gibraltar: chicken, rump steak, secreto ibérico, halloumi (V), falafel or tofu (VE), two sides and a house sauce. Prices and online ordering." name="description">
   <meta content="index, follow, max-image-preview:large" name="robots">
   <link href="https://era.food/menu.html" rel="canonical">
-  <meta content="Menu | era. modern Mediterranean food in Gibraltar" property="og:title">
-  <meta content="Choose a protein, two sides and a house sauce. See the menu, prices and order era. online." property="og:description">
+  <meta content="era. Menu &amp; Prices | Mediterranean, Vegan &amp; Veggie Plates in Gibraltar" property="og:title">
+  <meta content="Choose a protein, two sides and a house sauce, cooked with olive oil. Vegetarian and vegan options marked. See the menu, prices and order online." property="og:description">
   <meta content="https://era.food/images/e-opengraph.png" property="og:image">
   <meta content="1200" property="og:image:width">
   <meta content="630" property="og:image:height">
@@ -17,15 +17,15 @@
   <meta content="en_GB" property="og:locale">
   <meta content="website" property="og:type">
   <meta content="summary_large_image" name="twitter:card">
-  <meta content="Menu | era. Gibraltar" name="twitter:title">
-  <meta content="Choose a protein, two sides and a house sauce. See the menu, prices and order online." name="twitter:description">
+  <meta content="era. Menu &amp; Prices | Gibraltar" name="twitter:title">
+  <meta content="Choose a protein, two sides and a house sauce. Vegetarian and vegan options marked. See the menu, prices and order online." name="twitter:description">
   <meta content="https://era.food/images/e-opengraph.png" name="twitter:image">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="#ffecd4" name="theme-color">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/eragib.webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/site.css?v=20260824-corporate" rel="stylesheet" type="text/css">
+  <link href="css/site.css?v=20260919-lunch-club" rel="stylesheet" type="text/css">
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
@@ -33,32 +33,93 @@
   {
     "@context": "https://schema.org",
     "@type": "Menu",
+    "@id": "https://era.food/menu.html#menu",
     "name": "era. menu",
+    "description": "Build your plate at era. Gibraltar: one protein, two sides and a house sauce, cooked with olive oil. Vegetarian (V) and vegan (VE) options are marked, and allergen details are on the live ordering menu.",
     "url": "https://era.food/menu.html",
     "mainEntityOfPage": "https://era.food/menu.html",
     "inLanguage": "en-GB",
+    "publisher": {"@id": "https://era.food/#restaurant"},
     "hasMenuSection": [
       {
         "@type": "MenuSection",
-        "name": "Build your plate",
+        "name": "Build your plate: choose your protein",
+        "description": "Every plate is one protein, two sides and a house sauce, cooked with olive oil.",
         "hasMenuItem": [
-          {"@type": "MenuItem", "name": "Chicken Breast", "offers": {"@type": "Offer", "price": "9.50", "priceCurrency": "GBP"}},
-          {"@type": "MenuItem", "name": "Chicken Thigh", "offers": {"@type": "Offer", "price": "9.50", "priceCurrency": "GBP"}},
-          {"@type": "MenuItem", "name": "Heart of Rump Steak", "offers": {"@type": "Offer", "price": "12.90", "priceCurrency": "GBP"}},
-          {"@type": "MenuItem", "name": "Secreto Ibérico", "offers": {"@type": "Offer", "price": "11.90", "priceCurrency": "GBP"}},
-          {"@type": "MenuItem", "name": "Halloumi", "offers": {"@type": "Offer", "price": "10.90", "priceCurrency": "GBP"}},
-          {"@type": "MenuItem", "name": "Falafel", "offers": {"@type": "Offer", "price": "8.90", "priceCurrency": "GBP"}},
-          {"@type": "MenuItem", "name": "Crispy Tofu", "offers": {"@type": "Offer", "price": "8.90", "priceCurrency": "GBP"}}
+          {"@type": "MenuItem", "name": "Chicken Breast", "description": "Best with lemon & herb yoghurt.", "offers": {"@type": "Offer", "price": "9.50", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Chicken Thigh", "description": "Best with hot honey & chilli.", "offers": {"@type": "Offer", "price": "9.50", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Heart of Rump Steak", "description": "Best with chimichurri.", "offers": {"@type": "Offer", "price": "12.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Secreto Ibérico", "description": "Best with harissa.", "offers": {"@type": "Offer", "price": "11.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Halloumi", "description": "Vegetarian. Best with hot honey & chilli.", "suitableForDiet": "https://schema.org/VegetarianDiet", "offers": {"@type": "Offer", "price": "10.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Falafel", "description": "Vegan. Best with tahini.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"], "offers": {"@type": "Offer", "price": "8.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Crispy Tofu", "description": "Vegan. Best with harissa.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"], "offers": {"@type": "Offer", "price": "8.90", "priceCurrency": "GBP"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Pick any two sides",
+        "description": "Included with every plate.",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Sourdough bread", "description": "Crusty, chewy and rustic. Vegan.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"]},
+          {"@type": "MenuItem", "name": "Salad mix", "description": "Fresh, crisp and lightly dressed. Vegan.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"]}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Add one house sauce",
+        "description": "Included with every plate.",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Lemon & herb yoghurt", "description": "Vegetarian. Contains milk.", "suitableForDiet": "https://schema.org/VegetarianDiet"},
+          {"@type": "MenuItem", "name": "Harissa", "description": "Vegan.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"]},
+          {"@type": "MenuItem", "name": "Hot Honey & Chilli", "description": "Vegetarian.", "suitableForDiet": "https://schema.org/VegetarianDiet"},
+          {"@type": "MenuItem", "name": "Tahini", "description": "Vegan. Contains sesame.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"]},
+          {"@type": "MenuItem", "name": "Chimichurri", "description": "Vegan.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"]}
         ]
       },
       {
         "@type": "MenuSection",
         "name": "Starters and sharers",
         "hasMenuItem": [
-          {"@type": "MenuItem", "name": "Sweet Potato Fries", "offers": {"@type": "Offer", "price": "6.90", "priceCurrency": "GBP"}},
-          {"@type": "MenuItem", "name": "Falafel Bites", "offers": {"@type": "Offer", "price": "5.90", "priceCurrency": "GBP"}},
-          {"@type": "MenuItem", "name": "Homemade Hummus", "offers": {"@type": "Offer", "price": "5.90", "priceCurrency": "GBP"}},
-          {"@type": "MenuItem", "name": "Sourdough and Confit Garlic Butter", "offers": {"@type": "Offer", "price": "3.90", "priceCurrency": "GBP"}}
+          {"@type": "MenuItem", "name": "Sweet Potato Fries", "description": "Crispy skin-on fries, served with beetroot ketchup & lemon & herb yoghurt.", "offers": {"@type": "Offer", "price": "6.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Falafel Bites, Tahini & Chimichurri", "description": "Crispy herb falafel served on tahini, finished with chimichurri.", "offers": {"@type": "Offer", "price": "5.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Homemade Hummus", "description": "Silky house hummus, olive oil & warm spices.", "offers": {"@type": "Offer", "price": "5.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Sourdough & Confit Garlic Butter", "description": "Signature sourdough with whipped confit garlic and herb butter.", "offers": {"@type": "Offer", "price": "3.90", "priceCurrency": "GBP"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Drinks and something sweet",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "H2O Bar", "description": "Unlimited refills with four zero-added-sugar flavours."},
+          {"@type": "MenuItem", "name": "Coffee", "description": "Espresso, flat whites, lattes and more."},
+          {"@type": "MenuItem", "name": "Cold Drinks", "description": "Chilled cans and bottles."},
+          {"@type": "MenuItem", "name": "Banana Bread", "description": "Gluten free. A soft slice, served ready to eat.", "suitableForDiet": "https://schema.org/GlutenFreeDiet", "offers": {"@type": "Offer", "price": "4.90", "priceCurrency": "GBP"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Extra sauce pots",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Lemon & herb yoghurt", "description": "Vegetarian. Contains milk.", "suitableForDiet": "https://schema.org/VegetarianDiet", "offers": {"@type": "Offer", "price": "1.50", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Harissa", "description": "Vegan.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"], "offers": {"@type": "Offer", "price": "1.50", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Hot Honey & Chilli", "description": "Vegetarian.", "suitableForDiet": "https://schema.org/VegetarianDiet", "offers": {"@type": "Offer", "price": "1.50", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Tahini", "description": "Vegan. Contains sesame.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"], "offers": {"@type": "Offer", "price": "1.50", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Chimichurri", "description": "Vegan.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"], "offers": {"@type": "Offer", "price": "1.50", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Beetroot Ketchup", "description": "Vegan.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"], "offers": {"@type": "Offer", "price": "1.50", "priceCurrency": "GBP"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Add-on protein",
+        "description": "Add a second protein to any plate.",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Chicken Breast", "offers": {"@type": "Offer", "price": "5.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Chicken Thigh", "offers": {"@type": "Offer", "price": "5.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Heart of Rump Steak", "offers": {"@type": "Offer", "price": "7.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Secreto Ibérico", "offers": {"@type": "Offer", "price": "7.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Halloumi", "description": "Vegetarian.", "suitableForDiet": "https://schema.org/VegetarianDiet", "offers": {"@type": "Offer", "price": "6.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Falafel", "description": "Vegan.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"], "offers": {"@type": "Offer", "price": "4.90", "priceCurrency": "GBP"}},
+          {"@type": "MenuItem", "name": "Crispy Tofu", "description": "Vegan.", "suitableForDiet": ["https://schema.org/VeganDiet", "https://schema.org/VegetarianDiet"], "offers": {"@type": "Offer", "price": "4.90", "priceCurrency": "GBP"}}
         ]
       }
     ]
@@ -83,6 +144,9 @@
       </a>
       <a href="corporate.html" class="menu-item-mobil w-inline-block">
         <div>corporate</div>
+      </a>
+      <a href="lunch-club.html" class="menu-item-mobil w-inline-block">
+        <div>lunch club</div>
       </a>
       <a href="https://app.ordering.sumup.com/era/icc/order-type" class="menu-item-mobil order w-inline-block">
         <div>order now</div>
@@ -143,6 +207,7 @@
         <a href="about.html" class="nav-link w-nav-link">about</a>
         <a href="visit.html" class="nav-link w-nav-link">Visit</a>
         <a href="corporate.html" class="nav-link w-nav-link">corporate</a>
+        <a href="lunch-club.html" class="nav-link w-nav-link">lunch club</a>
         <div class="nav-link-underline w-embed">
           <style>
 .nav-link {
@@ -184,11 +249,11 @@
     <h1 class="sr-only">era. menu: build your plate</h1><img src="images/The-Menu-imagery.svg" loading="lazy" alt="The era. menu, opening edition" class="the-menu-tit-svg">
     <div class="top-sec-div about">
       <div class="heading menu">build your plate</div>
-      <div class="text-block menu">Pick a protein, choose two sides and add a house sauce. That&#x27;s your plate.</div><img src="images/outer-image.png" loading="lazy" sizes="(max-width: 479px) 100vw, 321px" srcset="images/outer-image-p-500.png 500w, images/outer-image.png 669w" alt="A finished era. plate" class="menu-image-float">
+      <div class="text-block menu">Pick a protein, choose two sides and add a house sauce. That&#x27;s your plate — cooked with olive oil, with vegetarian (V) and vegan (VE) options marked.</div><img src="images/outer-image.png" loading="lazy" sizes="(max-width: 479px) 100vw, 321px" srcset="images/outer-image-p-500.png 500w, images/outer-image.png 669w" alt="A chef garnishing plates in the kitchen" class="menu-image-float">
     </div>
   </section>
   <section class="menu-search">
-    <p class="launch-note">Menu and prices can change. <a href="https://app.ordering.sumup.com/era/icc/order-type">Check live ordering</a> for today&#x27;s availability and allergen details.</p>
+    <p class="launch-note">Menu and prices can change. <a href="https://app.ordering.sumup.com/era/icc/order-type">Check live ordering</a> for today&#x27;s availability and allergen details. After high-protein, vegetarian or vegan plates? <a href="healthy-office-lunch.html">See our healthy lunch guide</a>. Want lunch brought to your desk on weekdays? <a href="lunch-club.html">Join ERA Lunch Club</a>.</p>
     <div class="menu-container">
       <div data-current="Tab 1" data-easing="ease" data-duration-in="0" data-duration-out="0" class="tabs w-tabs">
         <div class="tabs-menu-2 w-tab-menu">
@@ -784,6 +849,8 @@
           <a id="w-node-ee5209c3-9bea-eb77-bb7f-117fb50f9274-d3ce2f6c" href="about.html" class="nav-link">about</a>
           <a id="w-node-ee5209c3-9bea-eb77-bb7f-117fb50f9276-d3ce2f6c" href="visit.html" class="nav-link">visit</a>
           <a href="corporate.html" class="nav-link">corporate</a>
+          <a href="healthy-office-lunch.html" class="nav-link">healthy lunches</a>
+          <a href="lunch-club.html" class="nav-link">lunch club</a>
           <a id="w-node-ee5209c3-9bea-eb77-bb7f-117fb50f9278-d3ce2f6c" href="loyalty.html" class="nav-link hidden">app</a>
           <a id="w-node-ee5209c3-9bea-eb77-bb7f-117fb50f927a-d3ce2f6c" href="https://app.ordering.sumup.com/era/icc/order-type" class="nav-link hidden">order</a>
         </div>
