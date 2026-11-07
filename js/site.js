@@ -111,8 +111,8 @@
     Wed: weekdayHours,
     Thu: weekdayHours,
     Fri: weekdayHours,
-    Sat: { opens: 10 * 60 + 30, closes: 20 * 60 },
-    Sun: { opens: 10 * 60 + 30, closes: 18 * 60 },
+    Sat: weekdayHours,
+    Sun: { opens: 9 * 60 + 30, closes: 18 * 60 },
   };
 
   const formatMinutes = (total) => {
