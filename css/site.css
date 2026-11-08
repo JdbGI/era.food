@@ -1513,8 +1513,25 @@ html.menu-open body {
 }
 
 /* ------------------------------------------------------------------ */
-/* Homepage: ERA Lunch Club as the hero's main action + band (2026-11)  */
+/* ERA Lunch Club: header pill on every page + homepage band (2026-11)  */
 /* ------------------------------------------------------------------ */
+
+/* "join lunch club" sits beside "order now" at the top of every page. */
+.nav-link-button.club {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--era-cream);
+  background-color: var(--era-bark);
+  white-space: nowrap;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.nav-link-button.club:hover,
+.nav-link-button.club:focus-visible {
+  color: var(--era-cream);
+  background-color: var(--era-dust);
+}
 
 .home-hero .top-sec-div {
   gap: clamp(1.1rem, 1.6vw, 1.6rem);
@@ -1526,78 +1543,15 @@ html.menu-open body {
   line-height: 1.45;
 }
 
-.hero-club {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-  margin-top: clamp(0.4rem, 1vw, 1rem);
-  color: var(--era-cream);
-  text-align: center;
-}
-
-.hero-club-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4em;
-  box-sizing: border-box;
-  padding: 0.85rem 2.1rem 0.8rem;
-  color: var(--era-bark);
-  background: var(--era-cream);
-  border: 2px solid var(--era-cream);
-  border-radius: 999px;
-  box-shadow: 0 1rem 2.75rem rgb(12 5 2 / 45%);
-  font-family: Tanker, Impact, sans-serif;
-  font-size: clamp(2rem, 2.5vw, 2.75rem);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1;
-  text-decoration: none;
-  text-transform: lowercase;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.hero-club-arrow {
-  flex: 0 0 auto;
-  width: 0.62em;
-  height: 0.62em;
-  transition: transform 0.2s ease-in-out;
-}
-
-.hero-club-btn:hover,
-.hero-club-btn:focus-visible {
-  color: var(--era-cream);
-  background: transparent;
-  box-shadow: 0 1rem 2.75rem rgb(12 5 2 / 25%);
-  transform: scale(1.03);
-}
-
-.hero-club-btn:hover .hero-club-arrow,
-.hero-club-btn:focus-visible .hero-club-arrow {
-  transform: translateX(0.15em);
-}
-
 .hero-club-note {
-  max-width: 25rem;
+  max-width: 27rem;
   margin: 0;
+  color: var(--era-cream);
   font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
   font-size: clamp(0.975rem, 1vw, 1.1rem);
   line-height: 1.45;
-}
-
-.hero-order-line {
-  margin: 0.4rem 0 0;
-  font-family: "Satoshi Variable", Satoshi, Arial, sans-serif;
-  font-size: clamp(0.95rem, 0.95vw, 1.05rem);
-  line-height: 1.4;
+  text-align: center;
   opacity: 0.85;
-}
-
-.hero-order-line .more-link {
-  margin-left: 0.3em;
-  font-size: inherit;
 }
 
 /* Terracotta, so it stays distinct from the dark "made by humans" section below. */
@@ -1612,6 +1566,26 @@ html.menu-open body {
 }
 
 @media (max-width: 767px) {
+  /* Flex rather than the desktop three-column grid, so both pills sit at
+     the right edge at every phone and small-tablet width. */
+  .nav-flex {
+    display: flex;
+  }
+
+  .nav-div.right {
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  /* Cream so it stands out over the dark hero; the outline keeps it
+     visible over cream sections as the header floats down the page. */
+  .nav-link-button.club {
+    padding: calc(0.65rem - 2px) calc(1rem - 2px);
+    color: var(--era-bark);
+    background-color: var(--era-cream);
+    border: 2px solid var(--era-bark);
+  }
+
   .section.home-hero {
     padding: 6.5rem 1.25rem 4.5rem;
   }
@@ -1630,17 +1604,6 @@ html.menu-open body {
   .home-hero .hero-text-block {
     max-width: 22rem;
     font-size: 1.0625rem;
-  }
-
-  .hero-club {
-    width: 100%;
-    margin-top: 0.4rem;
-  }
-
-  .hero-club-btn {
-    width: 100%;
-    padding: 1rem 1.5rem 0.9rem;
-    font-size: clamp(2rem, 9vw, 2.4rem);
   }
 
   .hero-club-note {
@@ -1723,5 +1686,40 @@ html.menu-open body {
 
   .club-hero-note {
     text-align: center;
+  }
+}
+
+/* Narrow phones: logo plus two header pills still fit on one row. */
+@media (max-width: 380px) {
+  .nav-flex {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .brand {
+    max-width: 3.25rem;
+  }
+
+  .nav-link-button {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .nav-link-button.club {
+    padding: calc(0.6rem - 2px) calc(0.8rem - 2px);
+  }
+}
+
+/* Small tablets: flex instead of the three-column grid so the centre links */
+/* don't run into the two pills; the pill replaces the duplicate text link. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav-flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-div:not(.right) > .nav-link[href="lunch-club.html"] {
+    display: none;
   }
 }
