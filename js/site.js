@@ -104,15 +104,15 @@
     hourCycle: "h23",
   });
 
-  const weekdayHours = { opens: 9 * 60 + 30, closes: 20 * 60 };
+  const dailyHours = { opens: 9 * 60 + 30, closes: 17 * 60 };
   const openingHours = {
-    Mon: weekdayHours,
-    Tue: weekdayHours,
-    Wed: weekdayHours,
-    Thu: weekdayHours,
-    Fri: weekdayHours,
-    Sat: weekdayHours,
-    Sun: { opens: 9 * 60 + 30, closes: 18 * 60 },
+    Mon: dailyHours,
+    Tue: dailyHours,
+    Wed: dailyHours,
+    Thu: dailyHours,
+    Fri: dailyHours,
+    Sat: dailyHours,
+    Sun: dailyHours,
   };
 
   const formatMinutes = (total) => {
@@ -129,7 +129,7 @@
         .map(({ type, value }) => [type, value]),
     );
     const minutes = Number(parts.hour) * 60 + Number(parts.minute);
-    const hours = openingHours[parts.weekday] || weekdayHours;
+    const hours = openingHours[parts.weekday] || dailyHours;
 
     if (minutes < hours.opens) {
       return { key: "opening-soon", message: `Online ordering opens at ${formatMinutes(hours.opens)}` };
