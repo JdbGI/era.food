@@ -1723,3 +1723,55 @@ html.menu-open body {
     display: none;
   }
 }
+
+/* Temporary opening notice. The markup on each page starts hidden and an
+   inline script shows it only until its data-expires time, so it switches
+   itself off without a redeploy. It is fixed above the floating header;
+   while it shows, the header and page drop by its measured height. */
+.site-notice {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0.7rem 1.25rem;
+  color: var(--era-cream);
+  background: var(--era-dust);
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.site-notice[hidden] {
+  display: none;
+}
+
+.site-notice__text {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+html.has-site-notice body {
+  padding-top: var(--site-notice-height, 0px);
+}
+
+html.has-site-notice .navbar {
+  top: var(--site-notice-height, 0px);
+}
+
+@media (max-width: 767px) {
+  .site-notice {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* On phones the menu page title image is placed absolutely from the page
+   top, so it needs the notice's drop added explicitly. */
+@media screen and (max-width: 479px) {
+  html.has-site-notice .the-menu-tit-svg {
+    margin-top: var(--site-notice-height, 0px);
+  }
+}

@@ -98,6 +98,9 @@
 
   const gibraltarClock = new Intl.DateTimeFormat("en-GB", {
     timeZone: "Europe/Gibraltar",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
     weekday: "short",
     hour: "2-digit",
     minute: "2-digit",
@@ -115,6 +118,10 @@
     Sun: dailyHours,
   };
 
+  // Whole days the shop is shut (Gibraltar dates, YYYY-MM-DD): the order
+  // pill shows the closed state all day instead of the menu that would run.
+  const closedDates = new Set(["2026-11-24"]);
+
   const formatMinutes = (total) => {
     const hour = String(Math.floor(total / 60)).padStart(2, "0");
     const minute = String(total % 60).padStart(2, "0");
@@ -125,9 +132,12 @@
     const parts = Object.fromEntries(
       gibraltarClock
         .formatToParts(date)
-        .filter(({ type }) => type === "weekday" || type === "hour" || type === "minute")
+        .filter(({ type }) => type !== "literal")
         .map(({ type, value }) => [type, value]),
     );
+    if (closedDates.has(`${parts.year}-${parts.month}-${parts.day}`)) {
+      return { key: "closed", message: "Online ordering is closed for today" };
+    }
     const minutes = Number(parts.hour) * 60 + Number(parts.minute);
     const hours = openingHours[parts.weekday] || dailyHours;
 
